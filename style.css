@@ -36,9 +36,15 @@ body {
   color: #fff;
   font-weight: 500;
   top: -40px;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
   line-height: 55px;
   z-index: 2;
+}
+
+.range .sliderValue span.show {
+  transform: translateX(-50%) scale(1);
 }
 
 .range .sliderValue span::after {
@@ -97,4 +103,8 @@ body {
   border-radius: 50%;
   border: 1px solid #664aff;
   cursor: pointer;
+}
+
+.range .field input::-moz-slider-progress {
+  background: #664aff;
 }
